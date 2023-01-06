@@ -1,12 +1,12 @@
 import React from "react";
 import Hidden from "./hidden";
+import UserInput from "./userInput";
 
 function App() {
   return (
     <div>
       <Hidden />
-      <label>enter your guess :</label>
-      <input></input>
+      <UserInput />
       <button>submit</button>
     </div>
   );
