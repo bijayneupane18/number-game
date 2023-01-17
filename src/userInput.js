@@ -22,10 +22,30 @@ const UserInput = () => {
   };
 
   return (
-    <div>
-      <h1>{randomNumber}</h1>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <h1
+        style={{
+          border: "1px solid black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "70px",
+          height: "70px",
+        }}
+      >
+        {randomNumber}
+      </h1>
       <label>Guess the number : </label>
       <input type="number" value={message} onChange={changeHandler}></input>
+      <br></br>
 
       <button
         onClick={() => {
