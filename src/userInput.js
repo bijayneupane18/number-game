@@ -31,6 +31,9 @@ const UserInput = () => {
         onClick={() => {
           setResult(true);
         }}
+        onBlur={() => {
+          setResult(false);
+        }}
       >
         Submit
       </button>
