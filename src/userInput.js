@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
+let randomNumber = Math.floor(Math.random() * 5);
+
 const UserInput = () => {
   const [message, setMessage] = useState("");
-  // const [check, setCheck] = useState(false);
-
-  const randomNumber = () => {
-    return Math.floor(Math.random() * 5);
-  };
+  const [result, setResult] = useState(false);
 
   const changeHandler = (e) => {
     setMessage(e.target.value);
@@ -14,20 +12,30 @@ const UserInput = () => {
   };
 
   const compare = () => {
-    if (randomNumber() == message) {
+    if (randomNumber == message) {
       console.log("Winner");
+      return "Winner";
     } else {
-      console.log("Looser");
+      console.log("loser");
+      return "Loser";
     }
   };
 
   return (
     <div>
-      <h1>{randomNumber()}</h1>
+      <h1>{randomNumber}</h1>
       <label>Guess the number : </label>
       <input type="number" value={message} onChange={changeHandler}></input>
-      <button onClick={compare}>Submit</button>
-      {/* {check ? compare() : ""} */}
+
+      <button
+        onClick={() => {
+          setResult(true);
+        }}
+      >
+        Submit
+      </button>
+
+      <h2>{result ? compare() : ""}</h2>
     </div>
   );
 };
